@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 60%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<table>
+  <tr>
+    <th>Method</th>
+    <th>Result (km)</th>
+    <th>% Error</th>
+  </tr>
+  <tr>
+    <td>Euclid</td>
+    <td> {{ euclid_distance }}</td>
+    <td>{{euclid_error}}</td>
+  </tr>
+  <tr>
+    <td> Great Circle  </td>
+    <td>{{ greatcircle_distance}} </td>
+    <td>{{greatcircle_error}}</td>
+  </tr>
+  <tr>
+    <td>Vincenty's </td>
+    <td> {{ vincenty_distance }} </td>
+    <td></td>
+  </tr>
+
+</table>
+
+</body>
+</html>
