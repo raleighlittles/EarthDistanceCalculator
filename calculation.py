@@ -4,7 +4,7 @@ import math
 
 
 def euclidean_distance(lat_A, lon_A, lat_B, lon_B):
-    return math.sqrt( (lat_B - lat_A)**2 + (lon_B - lon_A)**2 )
+    return round( math.sqrt( (lat_B - lat_A)**2 + (lon_B - lon_A)**2 ), 3)
 
 def great_circle_distance(lat_A, lon_A, lat_B, lon_B):
     return round( geopy.distance.great_circle((lat_A, lon_A), (lon_B, lon_B)).km, 4)
