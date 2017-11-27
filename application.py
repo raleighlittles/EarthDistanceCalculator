@@ -1,10 +1,6 @@
 from flask import Flask
 from flask import request
 from flask import render_template
-import re
-
-# see: https://stackoverflow.com/questions/12277933/send-data-from-a-textbox-into-flask
-# https://stackoverflow.com/questions/11178426/how-can-i-pass-data-from-flask-to-javascript-in-a-template
 
 import calculation as Distance
 
@@ -31,9 +27,7 @@ def my_form_post():
     print (vincenty_distance)
 
     euclid_error, greatcircle_error  = Distance.compute_percentage_error(euclid_distance, greatcircle_distance, vincenty_distance)
-    #return("Euclid distance: {} \n Great Circle distance: {} \n Vincenty Distance: {}".format(str(euclid), str(greatcircle), str(vincenty)))
     return render_template('results.html', euclid_distance = euclid_distance, euclid_error = euclid_error, greatcircle_distance = greatcircle_distance, greatcircle_error = greatcircle_error, vincenty_distance = vincenty_distance)
-
 
 
 if __name__ == '__main__':
